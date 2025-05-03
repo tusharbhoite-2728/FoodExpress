@@ -5,11 +5,12 @@ Welcome to FoodExpress, a dynamic and user-friendly multi-vendor food delivery w
 
 Whether you're a customer craving a quick meal, a vendor managing orders, or a delivery partner on the go, FoodExpress provides dedicated dashboards for each role — ensuring smooth and efficient operations across the platform.
 
-🚀 Features at a Glance
+## 🚀 Features at a Glance
 
-🔐 Secure Login & Role-based Access
-🍔 Interactive Customer Dashboard – Browse menus, place orders, track deliveries
-🧑‍🍳 Vendor Panel – Add/edit menu items, view and manage orders
-🚴 Delivery Dashboard – Real-time order tracking and delivery updates
-🛠️ Admin Control – Manage users, vendors, and delivery operations
-🗂️ Database Integration via JDBC – Lightweight, fast, and flexible
+- 🔐 **Secure Login & Role-based Access**  
+- 🍔 **Interactive Customer Dashboard** – Browse menus, place orders, track deliveries  
+- 🧑‍🍳 **Vendor Panel** – Add/edit menu items, view and manage orders  
+- 🚴 **Delivery Dashboard** – Real-time order tracking and delivery updates  
+- 🛠️ **Admin Control** – Manage users, vendors, and delivery operations  
+- 🗂️ **Database Integration via JDBC** – Lightweight, fast, and flexible  
+
