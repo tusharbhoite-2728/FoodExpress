@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Razorpay Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <h2>Pay with Razorpay</h2>
+    <button id="payBtn">Pay Now</button>
+
+    <script>
+        document.getElementById("payBtn").addEventListener("click", async function () {
+            const response = await fetch("http://localhost:8080/CreateOrder", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" }
+            });
+
+            const order = await response.json();
+
+            var options = {
+                "key": "YOUR_RAZORPAY_KEY_ID",
+                "amount": order.amount, // Amount in paisa (100 INR = 10000 paisa)
+                "currency": "INR",
+                "name": "My Store",
+                "description": "Test Transaction",
+                "order_id": order.id,
+                "handler": function (response) {
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                    window.location.href = "success.jsp";
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+
+            var rzp = new Razorpay(options);
+            rzp.open();
+        });
+    </script>
+</body>
+</html>

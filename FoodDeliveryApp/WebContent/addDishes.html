@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Dish</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('images/food-home.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #333;
+            padding-top: 20px;
+            position: fixed;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 220px;
+            width: calc(100% - 220px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Form Styling */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="text"], input[type="number"], select, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff5733;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e64e1a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <a href="vendorInfo.jsp">My Information</a>
+        <a href="#executed-orders">Executed Orders</a>
+        <a href="#pending-orders">Pending Orders</a>
+        <a href="addDishes.html">Add Dishes</a>
+        <a href="viewDishesByVendor.jsp">View Dishes</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="form-container">
+            <h2>Add New Dish</h2>
+            <form action="DishAdd" method="post" enctype="multipart/form-data" >
+            
+                 <!-- Restaurant Name -->
+                <label for="restaurant">Restaurant Name:</label>
+                <input type="text" id="restaurant" name="restaurant" required>
+                
+                <!-- Dish Name -->
+                <label for="name">Dish Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <!-- Category -->
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Beverages">Beverages</option>
+                    <option value="Desserts">Desserts</option>
+                </select>
+
+                <!-- Price -->
+                <label for="price">Price (₹):</label>
+                <input type="number" id="price" name="price" step="0.01" required>
+
+                <!-- Image Upload -->
+                <label for="image">Dish Image:</label>
+                <input type="file" id="image" name="image"  required>
+
+               
+                <!-- Submit Button -->
+                <input type="submit" value="Add Dish">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
